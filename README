@@ -1,5 +1,4 @@
 
 Scripts for Raspberry Pi
 
-	Talking.py: Adds voice interface to Raspberry Pi using AWS Polly and Festival speech synthesis.
-	Talking.py script runs in loop and tells the current outside tempeature and time, after every 30 secs.
+	Talking.py: Adds voice interface to Raspberry Pi using AWS Polly and Festival speech synthesis. Talking.py script runs in loop and tells the current outside tempeature and time, after every 30 secs.
