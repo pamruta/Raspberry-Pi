@@ -44,7 +44,7 @@ while(1):
 	tell_time = get_time()
 	speak_polly(tell_time)
 
-	# tell the current weather 
+	# tell the current temperature
 	tell_weather = get_weather("bangalore,india")
 	speak_polly(tell_weather)
 
