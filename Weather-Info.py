@@ -12,7 +12,7 @@ def get_time():
 	utterance = "Current Time is " + hr + " " + mins
 	return utterance
 
-# calling text to speech api
+# calling text to speech api of aws polly
 def speak_polly(text_utterance):
 	# using aws polly for speech synthesis
 	call_polly = "aws polly synthesize-speech --voice-id Joanna --output-format mp3 output.mp3 --text \"" + text_utterance + "\""
@@ -23,6 +23,12 @@ def speak_polly(text_utterance):
 
 	# play audio
 	os.system("afplay output.mp3")
+
+# calling festival's text to speech
+def speak_festival(text_utterance):
+	import os
+	call_fest = "echo \"" + text_utterance + "\" | festival --tts"
+	os.system(call_fest)
 
 # gets the weather data from Open Weather Map
 def get_weather(city):
