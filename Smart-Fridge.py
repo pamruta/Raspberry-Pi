@@ -1,4 +1,8 @@
 
+# this script takes a snapshot through Pi Camera
+# performs image recognition through AWS Rekognition Engine
+# and then calls AWS Polly Speech Synthesis API to describe the items found in the image
+
 # function to capture image with Pi Camera
 def capture_image(image_file):
 	import picamera
@@ -49,12 +53,13 @@ def image_recognition(image_file):
 
 	return items
 
+# capture image and identify objects with image recognition
 image_file = "image.jpg"
 capture_image(image_file)
 items = image_recognition(image_file)
 print items
 
-# creating output text for speech-synthesis
+# prepare text utterance for speech-synthesis
 if len(items) == 0:
 	speak_polly("Found no items in the fridge.")
 else:
