@@ -6,6 +6,8 @@ def get_time():
 
 	# get current local time
 	current_time = asctime(localtime(time()))
+
+	# parse the string to get the hr and mins
 	[day, month, date, time_stamp, year] = current_time.split(" ")
 	[hr, mins, secs] = time_stamp.split(":")
 
@@ -22,9 +24,9 @@ def speak_polly(text_utterance):
 	os.system(call_polly)
 
 	# play audio
-	os.system("afplay output.mp3")
+	os.system("omxplayer -o local output.mp3")
 
-# calling festival's text to speech
+# calling festival for text to speech
 def speak_festival(text_utterance):
 	import os
 	call_fest = "echo \"" + text_utterance + "\" | festival --tts"
@@ -55,4 +57,4 @@ while(1):
 	speak_polly(tell_weather)
 
 	# set timer 
-	time.sleep(30)
+	time.sleep(1800)
