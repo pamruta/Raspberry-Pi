@@ -1,11 +1,8 @@
 
 Scripts for Raspberry Pi
 
-	Weather.py: Adds voice interface to Raspberry Pi using AWS Polly and Festival speech synthesis. 
-	Weather.py script runs in loop and tells the current tempeature and time every 30 mins.
+	Weather.py: Adds voice interface to Raspberry Pi using AWS Polly and Festival speech synthesis. This script runs in loop and tells the current tempeature and time every 30 mins.
 
-	Camera.py: Python script to test the Raspberry Pi camera module. Shows video preview on the
-	connected monitor or TV screen.
+	Camera.py: Python script to test the Raspberry Pi camera module. Displays video stream on the connected monitor or TV screen.
 
-	Smart-Fridge.py: Takes picture with Pi Camera, performs image recognition with AWS Rekognition, 
-	and describes the items found in the image using the Text-to-Speech API of AWS Polly.
+	Smart-Fridge.py: Takes picture with Pi Camera, performs image recognition with AWS Rekognition Engine, and then describes the items found in the picture using the Text-to-Speech API of AWS Polly.
