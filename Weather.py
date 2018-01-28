@@ -11,7 +11,7 @@ def get_time():
 	[day, month, date, time_stamp, year] = current_time.split(" ")
 	[hr, mins, secs] = time_stamp.split(":")
 
-	utterance = "Current Time is " + hr + " " + mins
+	utterance = "Local Time is " + hr + " " + mins 
 	return utterance
 
 # calling text to speech api of aws polly
@@ -43,17 +43,26 @@ def get_weather(city):
 	weather_data = urllib2.urlopen(web_url).read()
 	weather = json.loads(weather_data)
 
-	utterance = "Outside Temperature is " + str(weather['main']['temp']) + " degree celsius"
+	utterance = "Temperature in " + city + " is: " + str(weather['main']['temp']) + " degree celsius."
 	return utterance
 
 import time
+import sys
+
+# city name can be specified as a command line parameter
+if len(sys.argv) == 2:
+	city = sys.argv[1]
+else:
+	city = "bangalore"
+
 while(1):
+
 	# tell the current time
 	tell_time = get_time()
 	speak_polly(tell_time)
 
 	# tell the current temperature
-	tell_weather = get_weather("bangalore,india")
+	tell_weather = get_weather(city)
 	speak_polly(tell_weather)
 
 	# set timer 
