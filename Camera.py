@@ -10,3 +10,5 @@ camera.vflip=True
 camera.start_preview(fullscreen=True)
 sleep(60)
 camera.stop_preview()
+
+camera.close()
